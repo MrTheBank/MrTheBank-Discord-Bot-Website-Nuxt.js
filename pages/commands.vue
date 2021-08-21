@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     async getData() {
-      this.data = await this.$axios.$get('/json/commands-' + this.$i18n.locale + '.json');
+      this.data = await this.$axios.$get(process.env.URL+'/json/commands-' + this.$i18n.locale + '.json');
       this.defaultItem();
     },
     changeActive(category) {
