@@ -1,0 +1,28 @@
+{
+  "name": "nuxtjs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/i18n": "^7.0.1",
+    "@nuxtjs/ngrok": "^2.0.0",
+    "core-js": "^3.15.1",
+    "mdb-ui-kit": "^3.9.0",
+    "nuxt": "^2.15.7"
+  },
+  "devDependencies": {
+    "@nuxtjs/color-mode": "^2.1.1",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "fibers": "^5.0.0",
+    "node-sass": "^6.0.1",
+    "sass": "^1.37.0",
+    "sass-loader": "^10.2.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kanit:300,400&display=swap");
+
+.img-circle {
+  border-radius: 50%;
+}
+.fa-times-thin:before {
+  content: '\00d7';
+}
