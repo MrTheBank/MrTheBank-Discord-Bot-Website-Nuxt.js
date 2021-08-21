@@ -122,6 +122,10 @@ export default {
     storageKey: 'nuxt-color-mode'
   },
 
+  axios: {
+    baseURL: process.env.URL, // Used as fallback if no runtime config is provided
+  },
+
   // ngrok: {
   //   region: 'ap', // one of ngrok regions (us, eu, au, ap, sa, jp, in), defaults to us
   // }
