@@ -30,7 +30,6 @@ export default {
 
 <style scoped>
 .footer {
-  font-family: 'Kanit', sans-serif;
   background-color: #fbfbfb;
 }
 .footer a {

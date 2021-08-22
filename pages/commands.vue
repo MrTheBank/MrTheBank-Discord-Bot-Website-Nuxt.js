@@ -47,7 +47,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: process.env.URL + '/commands'
+          content: process.env.BASE_URL + '/commands'
         },
         {
           hid: 'og:description',

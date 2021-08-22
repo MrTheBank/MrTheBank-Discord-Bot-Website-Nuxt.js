@@ -3,6 +3,7 @@ require('dotenv').config();
 export default {
   ssr: true,
   target: 'server',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - MrTheBank Discord Bot',
@@ -28,12 +29,12 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: process.env.URL
+        content: process.env.BASE_URL
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: process.env.URL+'/uploads/official/mrthebank.png'
+        content: process.env.BASE_URL+'/uploads/official/mrthebank.png'
       },
       {
         hid: 'og:description',
@@ -85,6 +86,7 @@ export default {
 
   // i18n
   i18n: {
+    baseUrl: process.env.BASE_URL,
     locales: [
       {
         name: 'ไทย',
@@ -123,8 +125,8 @@ export default {
   },
 
   axios: {
-    baseURL: process.env.URL, // Used as fallback if no runtime config is provided
-  },
+    baseURL: process.env.BASE_URL
+  }
 
   // ngrok: {
   //   region: 'ap', // one of ngrok regions (us, eu, au, ap, sa, jp, in), defaults to us

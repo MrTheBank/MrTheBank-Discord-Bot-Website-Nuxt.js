@@ -1,10 +1,8 @@
 <template>
   <div style="font-family: 'Kanit', sans-serif;">
-    <ColorScheme placeholder="..." tag="span">
-      <VHeader></VHeader>
-      <Nuxt/>
-      <VFooter></VFooter>
-    </ColorScheme>
+    <VHeader></VHeader>
+    <Nuxt/>
+    <VFooter></VFooter>
   </div>
 </template>
 
