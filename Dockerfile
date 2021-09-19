@@ -1,18 +1,28 @@
-FROM node:14.17.6-alpine
+ARG BASE_URL="https://mrthebank.maxnus.com"
 
-RUN apk add g++ make python
-
-WORKDIR /usr/src/app
-
-COPY . ./
-RUN npm install
+FROM node:14.17.6-alpine as builder
 
 ENV HOST=0.0.0.0
 ENV PORT=80
-ENV BASE_URL=https://mrthebank.maxnus.com
+ENV BASE_URL=${BASE_URL}
 
+WORKDIR /usr/src/app
+RUN apk add g++ make python
+
+ADD package.json package-lock.json ./
+
+RUN npm install
+
+ADD . ./
 RUN npm run build
 
-EXPOSE 80
+FROM node:14.17.6-alpine
+WORKDIR /usr/src/app
+ADD package.json ./
+ADD nuxt.config.js ./
+COPY --from=builder ./usr/src/node_modules ./node_modules/
+COPY --from=builder ./usr/src/.nuxt ./.nuxt/
+COPY --from=builder ./usr/src/static ./static/
 
+EXPOSE 80
 CMD [ "npm", "run", "start" ]
