@@ -20,9 +20,9 @@ FROM node:14.17.6-alpine
 WORKDIR /usr/src/app
 ADD package.json ./
 ADD nuxt.config.js ./
-COPY --from=builder ./usr/src/node_modules ./node_modules/
-COPY --from=builder ./usr/src/.nuxt ./.nuxt/
-COPY --from=builder ./usr/src/static ./static/
+COPY --from=builder ./usr/src/app/node_modules ./node_modules/
+COPY --from=builder ./usr/src/app/.nuxt ./.nuxt/
+COPY --from=builder ./usr/src/app/static ./static/
 
 EXPOSE 80
 CMD [ "npm", "run", "start" ]
