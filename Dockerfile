@@ -1,4 +1,4 @@
-FROM 14.17.6-alpine
+FROM node:14.17.6-alpine
 
 RUN apk add g++ make python
 
