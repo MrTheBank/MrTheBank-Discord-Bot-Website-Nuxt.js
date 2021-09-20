@@ -5,7 +5,7 @@ export default {
   target: 'server',
 
   env: {
-    BASE_URL: process.env.BASE_URL || 'https://mrthebank.maxnus.com'
+    baseUrl: process.env.BASE_URL || 'https://mrthebank.maxnus.com'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -30,21 +30,6 @@ export default {
         property: 'og:type',
         content: 'website'
       },
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: process.env.BASE_URL
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: process.env.BASE_URL+'/uploads/official/mrthebank.png'
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'MrTheBank Discord Bot - A multi-purpose bot for your discord server.'
-      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -68,6 +53,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/color-mode',
+    '@nuxtjs/dotenv'
     //'@nuxtjs/ngrok'
   ],
 

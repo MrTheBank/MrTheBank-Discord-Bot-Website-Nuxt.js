@@ -22,6 +22,23 @@ export default {
       htmlAttrs: {
         lang: this.$i18n.locale,
       },
+      meta: [
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: process.env.baseUrl
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: process.env.baseUrl + '/uploads/official/mrthebank.png'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'MrTheBank Discord Bot - A multi-purpose bot for your discord server.'
+        },
+      ],
       link: [
         { rel: 'stylesheet', href: '/assets/css/mdb.'+ this.$colorMode.value +'.min.css' },
       ],

@@ -2,7 +2,7 @@ ARG BASE_URL="https://mrthebank.maxnus.com"
 
 FROM node:14.17.6-alpine as builder
 WORKDIR /usr/src/app
-ENV BASE_URL=${BASE_URL}
+ENV BASE_URL ${BASE_URL}
 RUN apk add g++ make python
 ADD package.json package-lock.json ./
 RUN npm install
