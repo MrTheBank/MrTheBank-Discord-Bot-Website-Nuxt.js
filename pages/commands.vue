@@ -68,7 +68,7 @@ export default {
         this.defaultItem();
       } else {
         Object.entries(this.data.category[category]).forEach(value => {
-          if (value[0] !== 'category_name') {
+          if (value[0] !== 'category_name' && value[0] !== 'emoji') {
             Object.assign(this.query, {[value[0]]: value[1]})
           }
         });
@@ -79,7 +79,7 @@ export default {
       this.query = {};
       Object.values(this.data.category).forEach(category => {
         Object.entries(category).forEach(value => {
-          if (value[0] !== 'category_name') {
+          if (value[0] !== 'category_name' && value[0] !== 'emoji') {
             Object.assign(this.query, { [value[0]]:value[1] })
           }
         });
@@ -92,7 +92,7 @@ export default {
       this.query = {};
       Object.values(this.data.category).forEach(category => {
         Object.entries(category).forEach(value => {
-          if (value[0] !== 'category_name' && value[0].startsWith(event.target.value)) {
+          if ((value[0] !== 'category_name' && value[0] !== 'emoji') && value[0].startsWith(event.target.value)) {
             Object.assign(this.query, { [value[0]]:value[1] })
           }
         });

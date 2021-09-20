@@ -4,6 +4,10 @@ export default {
   ssr: true,
   target: 'server',
 
+  env: {
+    BASE_URL: process.env.BASE_URL || 'https://mrthebank.maxnus.com'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - MrTheBank Discord Bot',
@@ -64,7 +68,6 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/color-mode',
-    '@nuxtjs/dotenv',
     //'@nuxtjs/ngrok'
   ],
 
