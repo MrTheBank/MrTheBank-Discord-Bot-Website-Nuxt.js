@@ -33,6 +33,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '/assets/css/mdb.dark.min.css' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.15.3/css/all.css' },
     ]
   },
@@ -52,7 +53,6 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/color-mode',
     '@nuxtjs/dotenv'
     //'@nuxtjs/ngrok'
   ],
@@ -62,6 +62,10 @@ export default {
     '@nuxtjs/i18n',
     '@nuxtjs/axios'
   ],
+
+  serverMiddleware: {
+    '/api': '~/api/app.js'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -100,17 +104,6 @@ export default {
       onlyOnRoot: true,
       alwaysRedirect: true,
     }
-  },
-
-  colorMode: {
-    preference: 'system',
-    fallback: 'light',
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '-mode',
-    storageKey: 'nuxt-color-mode'
   },
 
   axios: {

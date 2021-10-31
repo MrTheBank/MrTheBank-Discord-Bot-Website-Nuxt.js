@@ -10,7 +10,7 @@
       <div class="about">
         <h1 class="text-center">{{ $t('index.about_title') }}</h1>
         <h5 class="text-center">{{ $t('index.about_desc') }}</h5>
-        <div class="card">
+        <div class="card mt-4">
           <div class="card-body">
             <div class="row">
               <div class="col-12 col-md-6 card-center">
@@ -29,6 +29,15 @@
                 <div class="content">
                   <h5>{{ $t('index.about.meme_generate') }}</h5>
                   <p>{{ $t('index.about.meme_generate_desc') }}</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 card-center">
+                <div class="icon">
+                  <i class="fas fa-music fa-3x"></i>
+                </div>
+                <div class="content">
+                  <h5>{{ $t('index.about.music') }}</h5>
+                  <p>{{ $t('index.about.music_desc') }}</p>
                 </div>
               </div>
             </div>
@@ -57,7 +66,7 @@ export default {
 .header .title {
   font-size: 3.5rem;
   font-weight: bold;
-  color: black;
+  color: #fff;
 }
 .header p {
   font-size: 1.5rem;
@@ -79,10 +88,6 @@ export default {
 }
 .about .content p {
   font-size: 14px;
-}
-
-.dark-mode .header .title {
-  color: #fff;
 }
 @media screen and (min-width: 992px) {
   .header {

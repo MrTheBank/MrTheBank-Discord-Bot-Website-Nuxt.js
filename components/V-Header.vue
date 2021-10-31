@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav v-bind:class="'header navbar-'+$colorMode.value">
+    <nav class="header navbar-dark">
       <div class="container-lg">
         <div class="logo">
           <NuxtLink :to="localePath('index')">
@@ -16,11 +16,6 @@
             <div class="submenu language-menu">
               <ul>
                 <li v-for="locale in Locales" :key="locale.code"><NuxtLink :to="switchLocalePath(locale.code)"><i v-bind:class="'flag flag-'+locale.flag"></i> {{ locale.name }}</NuxtLink></li>
-              </ul>
-            </div>
-            <div class="submenu template-menu">
-              <ul>
-                <li v-for="style in templates" :key="style.template"><a data-mdb-placement="bottom" data-mdb-toggle="tooltip" v-bind:title="$t('title.'+style.template)" v-bind:class="$colorMode.value===style.template?'active':''" @click="$colorMode.preference=style.template"><i v-bind:class="$colorMode.value===style.template?'fas'+' fa-'+style.icon:'far'+' fa-'+style.icon"></i></a></li>
               </ul>
             </div>
           </div>
@@ -54,11 +49,6 @@
             <li v-for="link in nav_items" :key="link.path" @click="sidenav=!sidenav">
               <NuxtLink :to="localePath(link.path)"><i v-bind:class="link.icon"></i> {{ $t(link.name) }}</NuxtLink>
             </li>
-          </ul>
-        </div>
-        <div class="theme-block">
-          <ul>
-            <li v-for="style in templates" :key="style.template" style="cursor: pointer"><a v-bind:class="$colorMode.value===style.template?'active':''" @click="$colorMode.preference=style.template"><i v-bind:class="$colorMode.value===style.template?'fas'+' fa-'+style.icon:'far'+' fa-'+style.icon"></i> {{ $t('title.'+style.template) }}</a></li>
           </ul>
         </div>
       </div>
@@ -121,7 +111,7 @@ export default {
 .header {
   display: flex;
   position: relative;
-  background-color: #EEEEEE;
+  background-color: #262626;
   box-shadow: 0 10px 20px 0 rgba(0,0,0,.05);
 }
 .header .logo {
@@ -139,7 +129,7 @@ export default {
 .header .logo .text {
   margin-top: 12px;
   float: right;
-  color: black;
+  color: #fff;
   justify-content: center;
 }
 .header .logo .text .text-title {
@@ -161,15 +151,15 @@ export default {
   font-size: 1.5rem;
   float: right;
   border: none;
-  background: none;
-  color: inherit;
+  color: #fff;
+  background-color: transparent;
 }
 .header .menu {
   display: none;
 }
 .sidenav-menu {
   transform: translateX(100%);
-  background-color: #EEEEEE;
+  background-color: #262626;
   position: fixed;
   display: block;
   width: 100%;
@@ -189,10 +179,10 @@ export default {
 .sidenav-menu a {
   font-size: 16px;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-  color: rgba(0,0,0,.55);
+  color: #b3b3b3 !important;
 }
 .sidenav-menu a:hover, .sidenav-menu .active {
-  color: black;
+  color: #fff !important;
 }
 .sidenav-menu .sidenav-header {
   height: 60px;
@@ -227,8 +217,8 @@ export default {
   width: 100%;
   height: 100%;
   border: none;
-  background: none;
-  color: inherit;
+  color: #fff;
+  background-color: transparent;
 }
 .sidenav-menu .sidenav-body {
   height: 100%;
@@ -275,24 +265,6 @@ export default {
 }
 .sidenav-menu.open+.sidenav-menu-helper {
   display: block;
-}
-
-/*  DARK MODE  */
-.dark-mode .header, .dark-mode .sidenav-menu {
-  background-color: #262626;
-}
-.dark-mode .header .logo .text {
-  color: #fff;
-}
-.dark-mode .header .sidenav-toggle button, .dark-mode .sidenav-menu .sidenav-header .sidenav-close button {
-  color: #fff;
-  background-color: transparent;
-}
-.dark-mode .sidenav-menu a {
-  color: #b3b3b3 !important;
-}
-.dark-mode .sidenav-menu a:hover, .dark-mode .sidenav-menu .active {
-  color: #fff !important;
 }
 
 /* Desktop Screen */
@@ -355,23 +327,13 @@ export default {
     color: black;
   }
   .header .menu .upper-menu .language-menu {
-    background-color: white;
+    background-color: black;
   }
   .header .menu .upper-menu .language-menu a {
     color: #b3b3b3 !important;
   }
   .header .menu .upper-menu .language-menu .active, .header .menu .upper-menu .language-menu a:hover {
-    color: black !important;
-  }
-  .header .menu .upper-menu .template-menu .active, .header .menu .upper-menu .template-menu a:hover {
     color: white !important;
-  }
-  .header .menu .upper-menu .template-menu {
-    background-color: black;
-  }
-  .header .menu .upper-menu .template-menu a {
-    color: #b3b3b3 !important;
-    cursor: pointer;
   }
   .header .menu .lower-menu {
     height: 65px;
@@ -391,18 +353,6 @@ export default {
   }
   .sidenav-menu {
     display: none;
-  }
-
-  /* Dark Mode */
-
-  .dark-mode .header .logo .text {
-    color: #fff;
-  }
-  .dark-mode .header .menu .upper-menu .language-menu {
-    background-color: #333333;
-  }
-  .dark-mode .header .menu .upper-menu .language-menu .active, .dark-mode .header .menu .upper-menu .language-menu a:hover {
-    color: white !important;
   }
 }
 </style>

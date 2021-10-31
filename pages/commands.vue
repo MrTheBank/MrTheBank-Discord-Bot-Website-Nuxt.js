@@ -17,6 +17,9 @@
         <h1 v-if="Object.keys(query).length === 0 && query.constructor === Object">{{ $t('commands.not_found') }}</h1>
         <VCommandItem v-for="(command, key) in query" :key="key" v-bind:command="command.command" v-bind:query="command.query" v-bind:description="command.description" v-bind:permissions="command.permissions"></VCommandItem>
       </div>
+      <div class="command-footer">
+        <p class="text-end">{{ $t('commands.last_updated') }}: {{ data.update }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -59,7 +62,7 @@ export default {
   },
   methods: {
     async getData() {
-      this.data = await this.$axios.$get('https://static.maxnus.com/mrthebank-discord/commands-' + this.$i18n.locale + '.json');
+      this.data = await this.$axios.$get('/api/info/commands?lang=' + this.$i18n.locale);
       this.defaultItem();
     },
     changeActive(category) {
@@ -111,10 +114,10 @@ export default {
 }
 .command-header a {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-  color: rgba(0,0,0,.55);
+  color: #b3b3b3 !important;
 }
 .command-header a:hover, .command-header .active {
-  color: black;
+  color: #fff !important;
 }
 .command-header ul {
   margin: 0;
@@ -131,15 +134,8 @@ export default {
 .command-header input {
   font-size: 20px;
 }
-.command-body {
+.command-body, .command-footer {
   margin: 24px;
-}
-
-.dark-mode .command-header a {
-  color: #b3b3b3 !important;
-}
-.dark-mode .command-header a:hover, .dark-mode .command-header .active {
-  color: #fff !important;
 }
 
 @media screen and (max-width: 576px) {

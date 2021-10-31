@@ -38,10 +38,7 @@ export default {
           property: 'og:description',
           content: 'MrTheBank Discord Bot - A multi-purpose bot for your discord server.'
         },
-      ],
-      link: [
-        { rel: 'stylesheet', href: '/assets/css/mdb.'+ this.$colorMode.value +'.min.css' },
-      ],
+      ]
     }
   },
   mounted() {
