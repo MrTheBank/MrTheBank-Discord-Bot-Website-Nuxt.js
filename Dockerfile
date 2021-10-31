@@ -18,6 +18,7 @@ ADD nuxt.config.js ./
 COPY --from=builder ./usr/src/app/node_modules ./node_modules/
 COPY --from=builder ./usr/src/app/.nuxt ./.nuxt/
 COPY --from=builder ./usr/src/app/static ./static/
+COPY --from=builder ./usr/src/app/api ./api/
 
 EXPOSE 80
 CMD [ "npm", "run", "start" ]
