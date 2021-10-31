@@ -1,4 +1,4 @@
-ARG BASE_URL="http://localhost"
+ARG BASE_URL="https://mrthebank.maxnus.com"
 
 FROM node:14.17.6-alpine as builder
 WORKDIR /usr/src/app
