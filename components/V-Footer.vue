@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="footer-bottom text-center p-3">
-      Copyright &copy; 2021 <NuxtLink :to="localePath('/')"><u>MrTheBank Discord Bot</u></NuxtLink>. All right reserved.
+      Copyright &copy; 2022 <NuxtLink :to="localePath('/')"><u>MrTheBank Discord Bot</u></NuxtLink>. All right reserved.
     </div>
   </footer>
 </template>
